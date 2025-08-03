@@ -1,24 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Predicción de Diabetes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 16px;
+            color: #444444;
+            font-weight: 500;
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-top: 24px;
+            text-align: center;
+            color: #222222;
+        }
+    </style>
 </head>
 <body>
-    <h1>Formulario de predicción</h1>
-    <form method="POST">
-        <label>Pregnancies: <input type="number" name="pregnancies" step="1" required></label><br>
-        <label>Glucose: <input type="number" name="glucose" step="any" required></label><br>
-        <label>Blood Pressure: <input type="number" name="blood_pressure" step="any" required></label><br>
-        <label>Skin Thickness: <input type="number" name="skin_thickness" step="any" required></label><br>
-        <label>Insulin: <input type="number" name="insulin" step="any" required></label><br>
-        <label>BMI: <input type="number" name="bmi" step="any" required></label><br>
-        <label>Diabetes Pedigree Function: <input type="number" name="dpf" step="any" required></label><br>
-        <label>Age: <input type="number" name="age" step="1" required></label><br><br>
-        <button type="submit">Predecir</button>
-    </form>
+    <div class="container">
+        <h1>Formulario de predicción</h1>
+        <form method="POST">
+            <label>Pregnancies:
+                <input type="number" name="pregnancies" step="1" required>
+            </label>
+            <label>Glucose:
+                <input type="number" name="glucose" step="any" required>
+            </label>
+            <label>Blood Pressure:
+                <input type="number" name="blood_pressure" step="any" required>
+            </label>
+            <label>Skin Thickness:
+                <input type="number" name="skin_thickness" step="any" required>
+            </label>
+            <label>Insulin:
+                <input type="number" name="insulin" step="any" required>
+            </label>
+            <label>BMI:
+                <input type="number" name="bmi" step="any" required>
+            </label>
+            <label>Diabetes Pedigree Function:
+                <input type="number" name="dpf" step="any" required>
+            </label>
+            <label>Age:
+                <input type="number" name="age" step="1" required>
+            </label>
+            <button type="submit">Predecir</button>
+        </form>
 
-    {% if prediction is not none %}
-        <h2>Resultado: {{ prediction }}</h2>
-    {% endif %}
+        {% if prediction is not none %}
+            <h2>Resultado: {{ prediction }}</h2>
+        {% endif %}
+    </div>
 </body>
 </html>
