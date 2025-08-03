@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Diabetes</title>
+</head>
+<body>
+    <h1>Formulario de predicción</h1>
+    <form method="POST">
+        <label>Pregnancies: <input type="number" name="pregnancies" step="1" required></label><br>
+        <label>Glucose: <input type="number" name="glucose" step="any" required></label><br>
+        <label>Blood Pressure: <input type="number" name="blood_pressure" step="any" required></label><br>
+        <label>Skin Thickness: <input type="number" name="skin_thickness" step="any" required></label><br>
+        <label>Insulin: <input type="number" name="insulin" step="any" required></label><br>
+        <label>BMI: <input type="number" name="bmi" step="any" required></label><br>
+        <label>Diabetes Pedigree Function: <input type="number" name="dpf" step="any" required></label><br>
+        <label>Age: <input type="number" name="age" step="1" required></label><br><br>
+        <button type="submit">Predecir</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Resultado: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
